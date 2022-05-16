@@ -1,5 +1,5 @@
 <script lang="ts" context="module">
-	import type { CodeDemoConfiguration, ConfiguratorDemoConfiguration } from '$lib/demos/types';
+	import type { ConfiguratorDemoType, ConfiguratorDemoConfiguration } from '$lib/types';
 
 	const codeTemplate = (props: string, children: string) => `
 <script>
@@ -11,8 +11,9 @@
 </Button>
 `;
 
+	export const type: ConfiguratorDemoType['type'] = 'configurator';
+
 	export const configuration: ConfiguratorDemoConfiguration = {
-		type: 'configurator',
 		codeTemplate,
 		configurator: [
 			{
@@ -36,6 +37,18 @@
 			{ name: 'disabled', type: 'boolean', initialValue: false, defaultValue: false },
 			{ name: 'compact', type: 'boolean', initialValue: false, defaultValue: false },
 			{ name: 'uppercase', type: 'boolean', initialValue: false, defaultValue: false },
+			{ name: 'ripple', type: 'boolean', initialValue: false, defaultValue: false },
+			{ name: 'loading', type: 'boolean', initialValue: false, defaultValue: false },
+			{
+				name: 'loaderPosition',
+				type: 'segmented',
+				data: [
+					{ label: 'left', value: 'left' },
+					{ label: 'right', value: 'right' }
+				],
+				initialValue: 'left',
+				defaultValue: 'left'
+			},
 			{ name: 'children', type: 'string', initialValue: 'Settings' }
 		]
 	};

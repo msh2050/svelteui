@@ -1,14 +1,15 @@
 <script lang="ts">
-	import type { DemoControlSelect } from '$lib/types';
+	import type { DemoControlSegmented } from '$lib/types';
 	import { NativeSelect } from '@svelteuidev/core';
 	import { upperFirst } from '$lib/utils';
 
 	export let value: string;
-	export let label: DemoControlSelect['label'];
-	export let data: DemoControlSelect['data'];
-	export let capitalize: DemoControlSelect['capitalize'] = true;
+	export let label: DemoControlSegmented['label'];
+	export let data: DemoControlSegmented['data'];
+	export let capitalize: DemoControlSegmented['capitalize'] = true;
 </script>
 
+<!-- TODO: change NativeSelect to Segmented when it will be implemented -->
 <NativeSelect
 	{value}
 	{label}
